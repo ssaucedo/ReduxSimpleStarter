@@ -1,0 +1,93 @@
+Tools:
+      Show code from object reference.
+      https://developers.google.com/web/tools/chrome-devtools/console/console-reference#dir
+
+
+--------------------------------------------
+NPM
+
+Inside my project directory
+npm install --save youtube-api-search
+
+'save' means save this in the package.json file.
+
+--------------------------------------------
+
+CSS
+
+Giving the top-level component a className that is the same
+of the class name. Males it easier to have one .css file per component.
+--------------------------------------------
+
+React
+
+Funtional component
+
+// This is a component created with a function.
+const SearchBar = () => {
+  return <input />
+};
+
+
+Class component
+
+It is used when we need a component have some type of internal
+record keeping. Aware of itself.
+
+
+EventHandler:
+
+Event Pooling
+The SyntheticEvent is pooled.
+  This means that the SyntheticEvent object will be
+  reused and all properties will be nullified
+  after the event callback has been invoked.
+  This is for performance reasons. As such,
+  you cannot access the event in an asynchronous way
+
+    1) Define an event handler.
+    2) Pass the event handler to the element we want to watch for the event.
+
+     Spec: https://www.w3.org/TR/DOM-Level-3-Events/
+     Html input elements emits events. This is an html feature. Normal browser event.
+     Browser events: https://developer.mozilla.org/en-US/docs/Web/Events
+     React supported events: https://facebook.github.io/react/docs/events.html
+
+
+State:
+  Plain .js object that is used to record on React the user events.
+  Each class based component has it's own state object. Whenever a component state is changed
+  the component re-renders. Also forces all of it's children to re-render as well.
+  The render function will be called again. And all the component defined in it will be render again.
+  To initialize state we need to set the property state in the class constructor.
+
+
+  1)   Initialize state. this.state = { term: ''};
+        Only in the constructor we manipulate state on this way.
+
+  2) we use setState to update state.
+
+Controlled Field/Input:
+
+  A form element whose value is set by the state.
+  The state tells the input what the current value should be.
+
+  <input
+    // Controlled component. Value set by state. Value change when state changes.
+    value = {this.state.term}
+    onChange={ event =>  this.setState({ term: event.target.value})}/>;
+
+
+
+Downwards dataflow
+
+Means that only the most parent component should be responsible for fetching
+data be it from an API, flux or redux itself.
+
+Callbacks ---> no more than two levels deep.
+
+------------------------------------
+
+Libraries:
+
+lodash ---> debounce.

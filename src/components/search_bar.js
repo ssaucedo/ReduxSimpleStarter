@@ -40,12 +40,11 @@ class SearchBar extends Component {
      //return <input onChange={this.onInputChange}/>;
      // we use setState to update state.
      return (
-       <div>
+       <div className="search-bar">
         <input
           // Controlled component. Value set by state. Value change when state changes.
           value = {this.state.term}
-          onChange={ event =>  this.setState({ term: event.target.value})} />;
-        //Value of the input: {this.state.term}
+          onChange={ event => this.onInputChange(event.target.value)}/>
        </div>
      );
    }
@@ -54,10 +53,10 @@ class SearchBar extends Component {
    //     Html input elements emits events. This is an html feature. Normal browser event.
    //     Browser events: https://developer.mozilla.org/en-US/docs/Web/Events
    //     React supported events: https://facebook.github.io/react/docs/events.html
-  onInputChange(event){
-      console.log(JSON.stringify(event));
-      console.log(event.target.value);
-   }
+    onInputChange(term){
+        this.setState({ term });
+        this.props.onSearchTermChange(term);
+    }
 }
 
 export default SearchBar;

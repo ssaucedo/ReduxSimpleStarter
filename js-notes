@@ -1,0 +1,10 @@
+Built in map iterator.
+
+> var array = [1, 2, 3];
+> array.map(function(number) { return number * 2});
+< [2, 4, 6];
+
+
+String interpolation ES / Template STRING
+const url = 'https://www.youtube.com/embed/' + videoId;
+const url = `https://www.youtube.com/embed/${videoId}`;
