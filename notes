@@ -10,3 +10,15 @@ because it provides some built in functionality that saves
 us to define custom eventHandlers for the "enter key" and for the
 submit button click event. We just handle onSubmit and don't care
 about the different ways the form can be submitted. (cons: we need to preventDefault)
+
+
+
+Middleware:
+
+Our functions that take an action and depending on the action type or payload
+or other factors, it can let the action pass through, manipulate it, console log it,
+or any other action before they reach any reducer.
+Kind of gatekeeper. Stop any actions, inspect it and then decide how to manipulate it.
+
+
+We can have many different steps of middleware in our application.
