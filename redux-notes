@@ -2,3 +2,55 @@
 
 Reducer:
 A reducer is a function that returns a piece of application state.
+
+Actions and Actions Creators.
+
+Changes the app state.
+
+
+Almost everything lifecycle:
+
+Event trigger by user (click, select an item, ajax request finishing, web page finished loading)
+This events can optionally call an action creator, a function that returns
+an 'action'.
+
+Action Creator returns an object (an Action).
+Which is send to all app's reducers.
+
+Reducers can choose depending on the action
+to return a piece of state that gets piped into
+the application state and then get pumped back
+into our react application which causes all of our components
+to re render.
+
+
+Action ---> All the reducers (which have an switch statement)
+if the reducer don't care about the action it returns the current state.
+If the reducer does cares about it return a value that will we the new value of state.
+
+Once all the reducers processed the action and return state or current state
+a new assembled state is pumped back into all different containers.
+And all the containers will run the mapStateToProps function
+that state will be dissected and injected into the containers
+
+
+Reducer state argument:
+
+State argunment is not application state, only
+the state this reducer is reponsabible for.
+Books reducer is responsible for creating the books property
+We have the same state thats being produced by this reducer. So this
+piece of state is flowing back when an action occurs.
+Same state just keeps flowing into this redicer over and over again.
+Redux does not allow a reducer returns an 'undefined', so we need to handle the initial state;
+
+From ES6
+export default function(state= null, action) {}
+'state = null' means, when the state is undefined set is as 'null'
+
+
+Whenever our app first boots up we don't have any application state.
+It's is assembled  for the reducers. Under the hood redux sends a couple of
+kind of booting up actions through all the reducers. So at first in reducer_active_book
+the reducer return a 'null' value. (if state = null is the default)
+We need a reasonable default state.
