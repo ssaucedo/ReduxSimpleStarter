@@ -1,0 +1,12 @@
+To create a controlled Component we need
+to set our state whenever the input is changed
+When we refer to state in the Component we refer
+to Component state not redux level state. Two completely
+separated things.
+
+
+We use <form> instead of <div> for "form" components
+because it provides some built in functionality that saves
+us to define custom eventHandlers for the "enter key" and for the
+submit button click event. We just handle onSubmit and don't care
+about the different ways the form can be submitted. (cons: we need to preventDefault)
