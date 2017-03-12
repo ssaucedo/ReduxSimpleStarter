@@ -1,0 +1,72 @@
+
+React-router
+Updates components shown in the screen depending
+on the URL.
+'History' is what interacts with URL and
+provides URL information to react-router.
+RR returns a different set of components depending
+on the path.
+
+
+Router decides what react components we need to render when the URL changes.
+browserHistory object to tells RR how to interpret changes to the URL.
+browserHistory is separated of the History library.
+Browser History is going to interpret everything after the protocol.
+'hashHistory' takes care of everything after the # in the URL.
+'memoryHistory' which don't use the URL at all.
+
+
+We need to set what valid routes the application has and the associated components
+
+------------------------------------------------------------
+
+Whenever we define a nested route like this:
+
+<Route path="/" component={App} >
+  <Route path="greet" component={Greeting} />
+</ Route>
+
+If we visit the nested route the child component is
+passed to parent as 'this.props.children'.
+
+------------------------------------------------------------
+
+App ---> root component --> may contain a header and a footer.
+IndexRoute ---> Rather than changing the App component we can use IndexRoute.
+Its a helper that behaves like a route but only will be shown when the URL matches
+up with the path defined by the parent but no by one of the children.
+
+------------------------------------------------------------
+
+react-router gives the user the sensation that is navigating between pages.
+
+------------------------------------------------------------
+
+
+We need to fetch data when the URL changes,
+A React LifeCycle method is a function on the React Component
+that is automatically call by react. There is multiple functions of this type.
+
+
+
+!important ---> Check react LifeCycle methods,
+
+
+
+
+Link from 'react-router' is a component,
+
+
+Distructuring of the object, we dont whant to pass it as formProps={...title} it would
+appear in the input as this.props.formProps. We need that every property on title object
+shows up inside the input. We distructure the object in key and values.
+
+
+<input type="text" className="form-control" {...title} />
+
+Would be like for instance:
+<input type="text" className="form-control" onChange={title.onChange} {...title} />
+
+
+
+...Object ---> Distructure.
