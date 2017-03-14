@@ -57,7 +57,7 @@ that is automatically call by react. There is multiple functions of this type.
 Link from 'react-router' is a component,
 
 
-Distructuring of the object, we dont whant to pass it as formProps={...title} it would
+Distructuring of the object, we dont want to pass it as formProps={...title} it would
 appear in the input as this.props.formProps. We need that every property on title object
 shows up inside the input. We distructure the object in key and values.
 
