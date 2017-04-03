@@ -8,7 +8,15 @@ describe('App' , () => {
     component = renderComponent(App);
   });
 
-  it('renders something', () => {
-    expect(component).to.exist;
+  // Just testing HTML, it's pretty flexible. The dev can change the implementation.
+  it('Shows a comment box', () => {
+    // Jquery find accepts a css selector. We test over the generated html.
+    expect(component.find('.comment-box')).to.exist;
+  });
+
+  // Just testing HTML, it's pretty flexible. The dev can change the implementation.
+  it('Shows a comment list', () => {
+    // Jquery find accepts a css selector. We test over the generated html.
+    expect(component.find('.comment-list')).to.exist;
   });
 });
